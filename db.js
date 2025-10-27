@@ -32,4 +32,28 @@ const disconnectDb = async () => {
   }
 };
 
+// db.js
+import mongoose from "mongoose"
+
+const uri = process.env.MONGODB_URI
+const dbName = process.env.MONGODB_DBNAME || "rpg_compendium"
+
+if (!uri) {
+  console.error("Falta MONGODB_URI en .env")
+  process.exit(1)
+}
+
+mongoose.connection.on("connected", () => {
+  console.log("MongoDB conectado:", dbName)
+})
+mongoose.connection.on("error", (err) => {
+  console.error("MongoDB error:", err)
+})
+
+await mongoose.connect(uri, {
+  dbName,
+  // useNewUrlParser: true, useUnifiedTopology: true  // (en Mongoose 7+ ya no hace falta)
+})
+
+
 export { connectDb, disconnectDb };
