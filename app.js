@@ -10,6 +10,9 @@ import classesRoutes from "./routes/classes.js";
 import speciesRoutes from "./routes/species.js";
 import charactersRoutes from "./routes/characters.js";
 import "./db.js";
+import { connectDb } from "./db.js";
+connectDb();
+
 
 console.log("\x1Bc");
 
