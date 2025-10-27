@@ -2,6 +2,7 @@
 import "dotenv/config";
 import express from "express";
 import cors from "cors";
+import morgan from "morgan"; // si no lo tenías, puedes quitarlo
 import indexRoutes from "./routes/index.js";
 import classesRoutes from "./routes/classes.js";
 import speciesRoutes from "./routes/species.js";
