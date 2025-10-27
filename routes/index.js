@@ -1,10 +1,10 @@
-import express from "express";
-const router = express.Router();
+// routes/index.js
+import { Router } from "express";
 
-/* GET home page. */
-router.get("/", function (req, res) {
-  res.status(200).send({ message: "API Works!" });
+const router = Router();
+
+router.get("/", (req, res) => {
+  res.json({ ok: true, message: "RPG API up" });
 });
-
 
 export default router;
