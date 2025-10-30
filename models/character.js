@@ -1,4 +1,3 @@
-// models/character.js
 import mongoose from "mongoose";
 
 const CharacterSchema = new mongoose.Schema(

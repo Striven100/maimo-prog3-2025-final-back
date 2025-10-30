@@ -1,4 +1,3 @@
-// routes/characters.js
 import { Router } from "express";
 import Character from "../models/character.js";
 

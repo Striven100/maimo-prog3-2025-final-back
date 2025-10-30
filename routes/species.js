@@ -1,4 +1,3 @@
-// routes/species.js
 import { Router } from "express";
 import Species from "../models/species.js";
 

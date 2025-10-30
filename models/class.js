@@ -1,4 +1,3 @@
-// models/class.js
 import mongoose from "mongoose";
 
 const LevelTraitSchema = new mongoose.Schema({

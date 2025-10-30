@@ -1,4 +1,3 @@
-// routes/classes.js
 import { Router } from "express";
 import Class from "../models/class.js";
 

@@ -1,9 +1,6 @@
-// app.js
 import "dotenv/config";
 import express from "express";
 import cors from "cors";
-// ❌ elimina esta línea
-// import morgan from "morgan";
 
 import indexRoutes from "./routes/index.js";
 import classesRoutes from "./routes/classes.js";
@@ -20,8 +17,6 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-// ❌ elimina esta línea
-// app.use(morgan("dev"));
 
 app.use("/", indexRoutes);
 app.use("/classes", classesRoutes);
