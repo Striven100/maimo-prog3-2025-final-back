@@ -10,7 +10,7 @@ const ClassSchema = new mongoose.Schema(
     name: { type: String, required: true, unique: true, trim: true },
     description: { type: String, required: true },
     levelTraits: { type: [LevelTraitSchema], default: [] },
-    proficiencies: { type: [String], default: [] }, // competencias
+    proficiencies: { type: [String], default: [] },
   },
   { timestamps: true }
 );

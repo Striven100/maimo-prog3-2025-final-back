@@ -3,7 +3,6 @@ import Character from "../models/character.js";
 
 const router = Router();
 
-// GET /characters
 router.get("/", async (req, res, next) => {
   try {
     const items = await Character.find()
@@ -16,7 +15,6 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-// GET /characters/:id
 router.get("/:id", async (req, res, next) => {
   try {
     const item = await Character.findById(req.params.id)
@@ -29,16 +27,16 @@ router.get("/:id", async (req, res, next) => {
   }
 });
 
-// POST /characters
 router.post("/", async (req, res, next) => {
   try {
-    const { name, level, classId, speciesId, background } = req.body;
+    const { name, level, classId, speciesId, background, portrait } = req.body;
     const item = await Character.create({
       name,
       level,
       class: classId,
       species: speciesId,
       background: background ?? "",
+      portrait: portrait ?? ""
     });
     res.status(201).json({ ok: true, item });
   } catch (err) {

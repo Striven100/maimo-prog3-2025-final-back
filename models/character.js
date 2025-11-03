@@ -7,6 +7,7 @@ const CharacterSchema = new mongoose.Schema(
     class: { type: mongoose.Schema.Types.ObjectId, ref: "Class", required: true },
     species: { type: mongoose.Schema.Types.ObjectId, ref: "Species", required: true },
     background: { type: String, default: "" },
+    portrait: { type: String, default: "" }
   },
   { timestamps: true }
 );
