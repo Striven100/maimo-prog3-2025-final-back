@@ -22,13 +22,16 @@ app.set("port", process.env.PORT || 4000);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(
-  cors({
-    origin: process.env.FRONT_URL || "http://localhost:3000",
-    credentials: true,
-    exposedHeaders: "Authorization",
-  })
-);
+     app.use(
+       cors({
+         origin: process.env.NODE_ENV === "production"
+           ? "https://maimo-prog3-2025-final-front.vercel.app"
+           : "http://localhost:3000",
+         credentials: true,
+         exposedHeaders: "Authorization",
+       })
+     );
+     
 
 /* Routes */
 app.use("/", indexRoutes);
