@@ -1,7 +1,6 @@
 import "dotenv/config";
 import express from "express";
 import cors from "cors";
-
 import indexRoutes from "./routes/index.js";
 import classesRoutes from "./routes/classes.js";
 import speciesRoutes from "./routes/species.js";
@@ -51,3 +50,5 @@ app.use(function (err, req, res, next) {
 app.listen(app.get("port"), () => {
   console.log(`Server on port ${app.get("port")}`);
 });
+
+export default app;
