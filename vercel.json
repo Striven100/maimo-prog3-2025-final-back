@@ -19,27 +19,27 @@
       "continue": true
     },
     {
-      "src": "/character/(?<id>[^/]+)",
+      "src": "/characters/(?<id>[^/]+)",
       "dest": "/app.js/?id=$id",
       "methods": ["DELETE"]
     },
     {
-      "src": "/character/(?<id>[^/]+)",
+      "src": "/characters/(?<id>[^/]+)",
       "dest": "/app.js/?id=$id",
       "methods": ["PUT"]
     },
     {
-      "src": "/character",
+      "src": "/characters",
       "dest": "/app.js",
       "methods": ["GET"]
     },
     {
-      "src": "/character/(?<id>[^/]+)",
+      "src": "/characters/(?<id>[^/]+)",
       "dest": "/app.js",
       "methods": ["GET"]
     },
     {
-      "src": "/character",
+      "src": "/characters",
       "dest": "/app.js",
       "methods": ["POST"]
     }
