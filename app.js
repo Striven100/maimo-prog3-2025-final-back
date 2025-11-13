@@ -2,9 +2,9 @@ import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import indexRoutes from "./routes/index.js";
+import charactersRoutes from "./routes/characters.js";
 import classesRoutes from "./routes/classes.js";
 import speciesRoutes from "./routes/species.js";
-import charactersRoutes from "./routes/characters.js";
 
 /* Clear the console  */
 console.log("\x1Bc");
@@ -24,7 +24,13 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: process.env.FRONT_URL || "http://localhost:3000",
+    origin:
+      process.env.NODE_ENV === "local"
+        ? [`http://${process.env.FRONT_URL}`]
+        : [
+            `https://${process.env.FRONT_URL}`,
+            `https://www.${process.env.FRONT_URL}`,
+          ],
     credentials: true,
     exposedHeaders: "Authorization",
   })
@@ -32,13 +38,14 @@ app.use(
 
 /* Routes */
 app.use("/", indexRoutes);
+app.use("/characters", charactersRoutes);
 app.use("/classes", classesRoutes);
 app.use("/species", speciesRoutes);
-app.use("/characters", charactersRoutes);
 
 /* Error handler  */
+// catch 404 and forward to error handler
 app.use(function (req, res, next) {
-  res.status(404).json({ message: "Not Found" });
+  next(createError(404));
 });
 
 app.use(function (err, req, res, next) {
@@ -50,5 +57,3 @@ app.use(function (err, req, res, next) {
 app.listen(app.get("port"), () => {
   console.log(`Server on port ${app.get("port")}`);
 });
-
-export default app;
