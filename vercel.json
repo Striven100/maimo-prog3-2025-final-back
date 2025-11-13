@@ -19,27 +19,27 @@
       "continue": true
     },
     {
-      "src": "/characters/(?<id>[^/]+)",
+      "src": "/products/(?<id>[^/]+)",
       "dest": "/app.js/?id=$id",
       "methods": ["DELETE"]
     },
     {
-      "src": "/characters/(?<id>[^/]+)",
+      "src": "/products/(?<id>[^/]+)",
       "dest": "/app.js/?id=$id",
       "methods": ["PUT"]
     },
     {
-      "src": "/characters",
+      "src": "/products",
       "dest": "/app.js",
       "methods": ["GET"]
     },
     {
-      "src": "/characters/(?<id>[^/]+)",
+      "src": "/products/(?<id>[^/]+)",
       "dest": "/app.js",
       "methods": ["GET"]
     },
     {
-      "src": "/characters",
+      "src": "/products",
       "dest": "/app.js",
       "methods": ["POST"]
     }
